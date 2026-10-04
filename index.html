@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sawan Ade — AI/ML Researcher & Builder</title>
+  <meta name="description" content="Personal bento portfolio of Sawan Ade — Undergraduate in Data Science & Engineering at IISER Bhopal, researching Agentic AI, Multi-Agent Systems, and Scientific ML.">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sawan Ade — AI/ML Researcher & Builder (V2)">
+  <meta property="og:description" content="Single-sheet interactive bento profile. Building systems that can reason.">
+  <meta property="og:url" content="https://sawan-ade.github.io/portfolio-v2/">
+  
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="bento-container">
+
+    <!-- Profile Header Card (Link3 Style) -->
+    <div class="profile-card">
+      <div class="profile-banner">
+        <canvas id="bannerCanvas" class="banner-canvas"></canvas>
+      </div>
+
+      <div class="profile-body">
+        <div class="avatar-wrapper">
+          <div class="avatar">
+            <span class="avatar-symbol">SA</span>
+            <span class="status-indicator" title="Available for research & collaborations"></span>
+          </div>
+          <span class="badge-version">● Version 2 · Bento</span>
+        </div>
+
+        <div class="profile-info">
+          <h1>
+            Sawan Ade
+            <span class="verified-icon" title="Verified Researcher">✓</span>
+          </h1>
+          <div class="profile-headline">AI/ML Researcher & Builder · IISER Bhopal</div>
+          <p class="profile-bio">
+            Undergraduate in <strong>Data Science & Engineering</strong> at the <strong>Indian Institute of Science Education and Research (IISER), Bhopal</strong>. Exploring Agentic AI, Multi-Agent Systems, LLM Reasoning & Evaluation, and Scientific Machine Learning. Building systems that can reason.
+          </p>
+        </div>
+
+        <!-- Social / Action Pills -->
+        <div class="social-pills-row">
+          <a class="social-pill primary" href="https://github.com/sawan-ade" target="_blank" rel="noopener">
+            GitHub ↗
+          </a>
+          <a class="social-pill" href="https://www.linkedin.com/in/SawanAde/" target="_blank" rel="noopener">
+            LinkedIn ↗
+          </a>
+          <a class="social-pill" href="mailto:adeysawan@gmail.com">
+            Email ↗
+          </a>
+          <button class="social-pill" data-copy="adeysawan@gmail.com" title="Copy Email">
+            Copy Email 📋
+          </button>
+          <a class="social-pill" href="https://sawan-ade.github.io/resume.html" target="_blank" rel="noopener">
+            Resume / CV ↗
+          </a>
+          <a class="social-pill" href="https://sawan-ade.github.io/" target="_blank" rel="noopener" style="color:var(--accent);">
+            Multi-Page V1 ↗
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured Spotlight: The Mirror -->
+    <div class="section-bar">
+      <span class="section-bar-title">Featured Spotlight</span>
+      <span class="tap-hint">Tap card to inspect</span>
+    </div>
+
+    <div class="bento-card featured clickable" data-sheet="mirror">
+      <div class="card-badge-row">
+        <span class="tag accent">★ Primary Showcase</span>
+        <span class="tag highlight">Interactive 2D Cosmos</span>
+        <span class="tag">Claude Sonnet</span>
+      </div>
+
+      <h2 class="card-title">The Mirror — Living Knowledge Planetarium</h2>
+      <p class="card-desc">
+        “Your thoughts, reflected back to you.” An AI-powered interactive visualization system that transforms unstructured thoughts, notes, and journals into an evolving celestial planetarium. Features force-directed galaxy maps, photographic memory anchors, voice reflections, and temporal evolution.
+      </p>
+
+      <div class="card-tap-cta">
+        <span>Tap to open comprehensive case study (01–07)</span>
+        <span>→</span>
+      </div>
+    </div>
+
+    <!-- Research Inquiries (Questions I'm Chasing) -->
+    <div class="section-bar">
+      <span class="section-bar-title">Research Inquiries</span>
+      <span class="tap-hint">Questions I'm Chasing</span>
+    </div>
+
+    <div class="mini-grid">
+      <div class="mini-card" data-sheet="inquiry-agents">
+        <div>
+          <div class="mini-card-top">
+            <span class="mini-card-num">01 / AGENTS</span>
+            <span class="mini-card-arrow">↗</span>
+          </div>
+          <h4>Multi-Agent Deliberation</h4>
+          <p>How multiple agents collaborate and debate to eliminate hallucination cascades.</p>
+        </div>
+        <div class="mini-card-tag"><span class="tag">Consensus & Debate</span></div>
+      </div>
+
+      <div class="mini-card" data-sheet="inquiry-eval">
+        <div>
+          <div class="mini-card-top">
+            <span class="mini-card-num">02 / EVALUATION</span>
+            <span class="mini-card-arrow">↗</span>
+          </div>
+          <h4>Non-Gameable LLM Judges</h4>
+          <p>Overcoming verbosity and position biases through mechanism design and rubrics.</p>
+        </div>
+        <div class="mini-card-tag"><span class="tag">Judge Reliability</span></div>
+      </div>
+
+      <div class="mini-card" data-sheet="inquiry-sciml">
+        <div>
+          <div class="mini-card-top">
+            <span class="mini-card-num">03 / SCIENTIFIC ML</span>
+            <span class="mini-card-arrow">↗</span>
+          </div>
+          <h4>Symbolic ODE Discovery</h4>
+          <p>Recovering physical invariants and differential equations from noisy trajectories.</p>
+        </div>
+        <div class="mini-card-tag"><span class="tag">SINDy + Autodiff</span></div>
+      </div>
+
+      <div class="mini-card" data-sheet="inquiry-memory">
+        <div>
+          <div class="mini-card-top">
+            <span class="mini-card-num">04 / COGNITION</span>
+            <span class="mini-card-arrow">↗</span>
+          </div>
+          <h4>Dynamic Memory Graphs</h4>
+          <p>Modeling how associative personal knowledge representations decay and evolve.</p>
+        </div>
+        <div class="mini-card-tag"><span class="tag">Knowledge Graphs</span></div>
+      </div>
+    </div>
+
+    <!-- Selected Projects Grid -->
+    <div class="section-bar">
+      <span class="section-bar-title">Selected Projects</span>
+      <span class="tap-hint">Tap card for deep dive</span>
+    </div>
+
+    <div class="mini-grid">
+      <!-- ML4Sci Sparse DL -->
+      <div class="mini-card" data-sheet="ml4sci">
+        <div>
+          <div class="mini-card-top">
+            <span class="mini-card-num">02 / RESEARCH</span>
+            <span class="tag accent" style="padding:2px 7px; font-size:11px;">90.5% Acc</span>
+          </div>
+          <h4>ML4Sci — Sparse Deep Learning</h4>
+          <p>Subatomic particle collision classification via sparse CNNs, autoencoder pretraining & pruning.</p>
+        </div>
+        <div class="mini-card-tag"><span class="tag">PyTorch · GSoC 2026</span></div>
+      </div>
+
+      <!-- SIR Model Discovery -->
+      <div class="mini-card" data-sheet="sir">
+        <div>
+          <div class="mini-card-top">
+            <span class="mini-card-num">03 / SCIENTIFIC ML</span>
+            <span class="mini-card-arrow">↗</span>
+          </div>
+          <h4>SIR Model ODE Discovery</h4>
+          <p>Neural autograd derivative extraction and LASSO regression discovering epidemic dynamics.</p>
+        </div>
+        <div class="mini-card-tag"><span class="tag">SINDy · PyTorch</span></div>
+      </div>
+
+      <!-- Groundwater Prediction -->
+      <div class="mini-card" data-sheet="groundwater">
+        <div>
+          <div class="mini-card-top">
+            <span class="mini-card-num">04 / APPLIED ML</span>
+            <span class="mini-card-arrow">↗</span>
+          </div>
+          <h4>Groundwater Prediction</h4>
+          <p>Spatiotemporal hydrological forecasting pipeline comparing XGBoost, CatBoost and LSTM.</p>
+        </div>
+        <div class="mini-card-tag"><span class="tag">IIT Patna Internship</span></div>
+      </div>
+
+      <!-- Transformer From Scratch -->
+      <div class="mini-card" data-sheet="transformer">
+        <div>
+          <div class="mini-card-top">
+            <span class="mini-card-num">05 / FOUNDATIONS</span>
+            <span class="mini-card-arrow">↗</span>
+          </div>
+          <h4>Transformer From Scratch</h4>
+          <p>Pure PyTorch sequence-to-sequence implementation: multi-head attention, positional encoding.</p>
+        </div>
+        <div class="mini-card-tag"><span class="tag">PyTorch · NLP</span></div>
+      </div>
+
+      <!-- Instagram Focus (Full width in mini-grid) -->
+      <div class="mini-card" data-sheet="instagram" style="grid-column: span 2;">
+        <div>
+          <div class="mini-card-top">
+            <span class="mini-card-num">06 / PRODUCT ETHICS</span>
+            <span class="mini-card-arrow">↗</span>
+          </div>
+          <h4>Instagram Focus</h4>
+          <p>Cognitive focus concept isolating high-utility communication surfaces while filtering addictive recommendation feeds.</p>
+        </div>
+        <div class="mini-card-tag"><span class="tag">Interface Design · Product</span></div>
+      </div>
+    </div>
+
+    <!-- Experience Timeline -->
+    <div class="section-bar">
+      <span class="section-bar-title">Experience & Trajectory</span>
+      <span class="tap-hint">Tap role for details</span>
+    </div>
+
+    <div class="list-card-group">
+      <div class="list-item-card" data-sheet="exp-agentic">
+        <div class="list-item-left">
+          <div class="list-item-date">2026 · CURRENT FOCUS</div>
+          <div class="list-item-title">Agentic AI Research & Engineering</div>
+          <div class="list-item-sub">Multi-agent workflows, LangGraph, RAG & LLM evaluation</div>
+        </div>
+        <div class="list-item-arrow">↗</div>
+      </div>
+
+      <div class="list-item-card" data-sheet="exp-visdom">
+        <div class="list-item-left">
+          <div class="list-item-date">DEC 2025 — MAR 2026</div>
+          <div class="list-item-title">Research Intern · Visdom Lab</div>
+          <div class="list-item-sub">Deep Learning & Computer Vision representations</div>
+        </div>
+        <div class="list-item-arrow">↗</div>
+      </div>
+
+      <div class="list-item-card" data-sheet="exp-iitp">
+        <div class="list-item-left">
+          <div class="list-item-date">SUMMER INTERNSHIP</div>
+          <div class="list-item-title">Research Intern · IIT Patna</div>
+          <div class="list-item-sub">Hydrological environmental modeling (XGBoost, CatBoost, LSTM)</div>
+        </div>
+        <div class="list-item-arrow">↗</div>
+      </div>
+
+      <div class="list-item-card" data-sheet="exp-leadership">
+        <div class="list-item-left">
+          <div class="list-item-date">2025 — PRESENT</div>
+          <div class="list-item-title">Vice-Secretary · Fine Arts & Literary Council</div>
+          <div class="list-item-sub">IISER Bhopal · Campus governance & academic coordination</div>
+        </div>
+        <div class="list-item-arrow">↗</div>
+      </div>
+    </div>
+
+    <!-- Academic Background Card -->
+    <div class="section-bar">
+      <span class="section-bar-title">Education</span>
+      <span class="tap-hint">Tap for coursework</span>
+    </div>
+
+    <div class="bento-card clickable" data-sheet="education">
+      <div class="card-badge-row">
+        <span class="tag accent">Institute of National Importance</span>
+        <span class="tag">Undergraduate</span>
+      </div>
+      <h3 style="font-size:22px; color:#ffffff; margin-bottom:6px;">Indian Institute of Science Education and Research (IISER) Bhopal</h3>
+      <p style="color:var(--muted); font-size:14px; margin-bottom:12px;">
+        BS-MS in Data Science & Engineering. Rigorous mathematical foundations synthesized with computational systems and machine learning.
+      </p>
+      <div class="card-tap-cta">
+        <span>Tap to inspect core mathematical & computing coursework</span>
+        <span>→</span>
+      </div>
+    </div>
+
+    <!-- Publications & Working Notes -->
+    <div class="section-bar">
+      <span class="section-bar-title">Publications & Reports</span>
+      <span class="tap-hint">Tap for BibTeX citation</span>
+    </div>
+
+    <div class="list-card-group">
+      <div class="list-item-card" data-sheet="pub-sparse">
+        <div class="list-item-left">
+          <div class="list-item-date">TECHNICAL REPORT · 2026</div>
+          <div class="list-item-title">Sparse CNNs for Particle Collision Discrimination</div>
+          <div class="list-item-sub">ML4Sci benchmark (90.5% accuracy) · Copy BibTeX inside</div>
+        </div>
+        <div class="list-item-arrow">↗</div>
+      </div>
+
+      <div class="list-item-card" data-sheet="pub-sir">
+        <div class="list-item-left">
+          <div class="list-item-date">RESEARCH REPORT · 2026</div>
+          <div class="list-item-title">Symbolic Discovery of Epidemiological Dynamics</div>
+          <div class="list-item-sub">Neural Autograd + LASSO regression · Copy BibTeX inside</div>
+        </div>
+        <div class="list-item-arrow">↗</div>
+      </div>
+    </div>
+
+    <!-- Achievements & Recognition Card -->
+    <div class="section-bar">
+      <span class="section-bar-title">Achievements</span>
+      <span class="tap-hint">Tap for verified milestones</span>
+    </div>
+
+    <div class="bento-card clickable" data-sheet="achievements">
+      <div class="card-badge-row">
+        <span class="tag accent">GSoC Tasks</span>
+        <span class="tag highlight">IIT Patna Selection</span>
+        <span class="tag">Visdom Lab</span>
+      </div>
+      <h3 style="font-size:20px; color:#ffffff; margin-bottom:6px;">Verified Milestones & Selections</h3>
+      <p style="color:var(--muted); font-size:13.5px; margin-bottom:12px;">
+        Competitive admissions, open-source scientific deep learning task qualifications, research appointments, and leadership.
+      </p>
+      <div class="card-tap-cta">
+        <span>Tap to view full milestone record</span>
+        <span>→</span>
+      </div>
+    </div>
+
+    <!-- Direct Reach / Quick Message Card -->
+    <div class="section-bar">
+      <span class="section-bar-title">Connect & Inquiries</span>
+      <span class="tap-hint">Collaborate</span>
+    </div>
+
+    <div class="bento-card" style="cursor:default;">
+      <h3 style="font-size:22px; color:#ffffff; margin-bottom:8px;">Let's Build Something Ambitious</h3>
+      <p style="color:var(--muted); font-size:14px; margin-bottom:20px;">
+        Open to research collaborations, Summer 2026 internships, and deep discussions on agentic architectures.
+      </p>
+
+      <form onsubmit="handleMailCompose(event)">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:10px;">
+          <input id="v2SenderName" type="text" placeholder="Your Name" required
+                 style="background:#181820; border:1px solid var(--line); border-radius:var(--radius-sm); padding:10px 12px; color:#fff; font-size:13.5px; outline:none;">
+          <input id="v2SenderSub" type="text" placeholder="Subject" required
+                 style="background:#181820; border:1px solid var(--line); border-radius:var(--radius-sm); padding:10px 12px; color:#fff; font-size:13.5px; outline:none;">
+        </div>
+        <textarea id="v2SenderMsg" placeholder="Hi Sawan, I'd like to connect regarding..." required
+                  style="width:100%; background:#181820; border:1px solid var(--line); border-radius:var(--radius-sm); padding:10px 12px; color:#fff; font-size:13.5px; min-height:85px; outline:none; margin-bottom:12px; resize:vertical;"></textarea>
+        <button type="submit" class="social-pill primary" style="width:100%; justify-content:center; cursor:pointer;">
+          Compose Direct Email ↗
+        </button>
+      </form>
+    </div>
+
+    <!-- Footer -->
+    <div class="bento-footer">
+      <p>© 2026 Sawan Ade · IISER Bhopal · Built for GitHub Pages</p>
+      <p style="margin-top:6px;">
+        <a href="https://sawan-ade.github.io/" style="color:var(--accent);">View Multi-Page Research Portfolio (V1) →</a>
+      </p>
+    </div>
+
+  </div>
+
+  <!-- SLIDE-UP DETAIL SHEET MODAL -->
+  <div class="sheet-backdrop" id="sheetBackdrop"></div>
+  <div class="sheet-modal" id="sheetModal" role="dialog" aria-modal="true">
+    <div class="sheet-handle-bar">
+      <div class="sheet-handle"></div>
+    </div>
+    <div class="sheet-header">
+      <div>
+        <span class="tag accent" id="sheetTag">CATEGORY</span>
+        <h2 id="sheetTitle" style="margin-top:6px;">Title</h2>
+      </div>
+      <button class="sheet-close-btn" id="sheetCloseBtn" aria-label="Close modal">✕</button>
+    </div>
+    <div class="sheet-scroll-body">
+      <div class="sheet-lead" id="sheetLead"></div>
+      <div id="sheetContent"></div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toastMsg" class="toast-msg"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
