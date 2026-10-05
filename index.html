@@ -475,9 +475,17 @@
         </div>
         <textarea id="v2SenderMsg" placeholder="Hi Sawan, I'd like to connect regarding..." required
                   style="width:100%; background:var(--bg-subtle); border:1px solid var(--line); border-radius:var(--radius-sm); padding:9px 12px; color:var(--text); font-size:13px; min-height:75px; outline:none; margin-bottom:10px; resize:vertical;"></textarea>
-        <button type="submit" class="social-pill primary" style="width:100%; justify-content:center; cursor:pointer;">
-          Compose Direct Email ↗
-        </button>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <button type="button" onclick="composeViaGmail()" class="social-pill primary" style="flex:1; justify-content:center; cursor:pointer;">
+            Open in Gmail ↗
+          </button>
+          <button type="submit" class="social-pill" style="flex:1; justify-content:center; cursor:pointer;" title="Launch default email client (mailto)">
+            Default App ✉
+          </button>
+          <button type="button" onclick="copyMailDraft()" class="social-pill" style="justify-content:center; cursor:pointer;" title="Copy entire note to clipboard">
+            Copy 📋
+          </button>
+        </div>
       </form>
     </div>
 

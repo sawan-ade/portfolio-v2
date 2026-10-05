@@ -538,11 +538,60 @@ window.copyBibtex = function(elemId) {
   }
 };
 
+/* ==========================================================================
+   MAIL COMPOSITION SYSTEM (GMAIL WEB + MAILTO + CLIPBOARD FALLBACK)
+   ========================================================================== */
+window.getMailData = function() {
+  const nameInput = document.getElementById('v2SenderName') || document.getElementById('senderName');
+  const subInput = document.getElementById('v2SenderSub') || document.getElementById('senderSubject');
+  const msgInput = document.getElementById('v2SenderMsg') || document.getElementById('senderMessage');
+
+  const name = nameInput ? nameInput.value.trim() : '';
+  const sub = subInput && subInput.value.trim() ? subInput.value.trim() : 'Research / Collaboration Inquiry';
+  const msg = msgInput ? msgInput.value.trim() : '';
+  const email = 'adeysawan@gmail.com';
+  const fullBody = name ? `From: ${name}\n\n${msg}` : msg;
+
+  return { email, sub, fullBody, name, msg };
+};
+
+window.composeViaGmail = function() {
+  const { email, sub, fullBody, msg } = window.getMailData();
+  if (!msg) {
+    showToast('Please type a message first!');
+    return;
+  }
+  const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(sub)}&body=${encodeURIComponent(fullBody)}`;
+  window.open(url, '_blank');
+  showToast('Opened in Gmail! ✉');
+};
+
+window.copyMailDraft = function() {
+  const { email, sub, fullBody, msg } = window.getMailData();
+  if (!msg) {
+    showToast('Please type a message first!');
+    return;
+  }
+  const draftText = `To: ${email}\nSubject: ${sub}\n\n${fullBody}`;
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(draftText).then(() => {
+      showToast('Full message & address copied! 📋');
+    });
+  }
+};
+
 window.handleMailCompose = function(e) {
-  e.preventDefault();
-  const name = document.getElementById('v2SenderName').value;
-  const sub = document.getElementById('v2SenderSub').value;
-  const msg = document.getElementById('v2SenderMsg').value;
-  const body = encodeURIComponent(`From: ${name}\n\n${msg}`);
-  window.location.href = `mailto:adeysawan@gmail.com?subject=${encodeURIComponent(sub)}&body=${body}`;
+  if (e) e.preventDefault();
+  const { email, sub, fullBody, msg } = window.getMailData();
+  if (!msg) {
+    showToast('Please type a message first!');
+    return;
+  }
+  const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(sub)}&body=${encodeURIComponent(fullBody)}`;
+  window.location.href = mailtoUrl;
+
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(`To: ${email}\nSubject: ${sub}\n\n${fullBody}`).catch(() => {});
+  }
+  showToast('Opening default mail client... (Draft copied 📋)');
 };
