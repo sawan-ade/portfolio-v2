@@ -7,25 +7,28 @@
   <meta name="description" content="Personal bento portfolio of Sawan Ade — Undergraduate in Data Science & Engineering at IISER Bhopal, researching Agentic AI, Multi-Agent Systems, and Scientific ML.">
   
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Sawan Ade — AI/ML Researcher & Builder (V2)">
-  <meta property="og:description" content="Single-sheet interactive bento profile. Building systems that can reason.">
+  <meta property="og:title" content="Sawan Ade — AI/ML Researcher & Builder (V2 Bento)">
+  <meta property="og:description" content="Interactive bento profile. Building systems that can reason.">
   <meta property="og:url" content="https://sawan-ade.github.io/portfolio-v2/">
   
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   
-  <!-- Fonts -->
+  <!-- Best Editorial & Tech Fonts: Instrument Serif + Plus Jakarta Sans + Inter + JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- 3D Particle Waves Canvas on White Background -->
+  <canvas id="particleWavesCanvas" class="particle-waves-canvas"></canvas>
+
   <div class="bento-container">
 
-    <!-- Profile Header Card (Link3 Style) -->
-    <div class="profile-card">
+    <!-- BLOCK 1: Profile Identity Block (Span 8 cols) -->
+    <div class="col-8 profile-card">
       <div class="profile-banner">
         <canvas id="bannerCanvas" class="banner-canvas"></canvas>
       </div>
@@ -36,7 +39,7 @@
             <span class="avatar-symbol">SA</span>
             <span class="status-indicator" title="Available for research & collaborations"></span>
           </div>
-          <span class="badge-version">● Version 2 · Bento</span>
+          <span class="badge-version">● Version 2 · Bento Grid</span>
         </div>
 
         <div class="profile-info">
@@ -46,7 +49,8 @@
           </h1>
           <div class="profile-headline">AI/ML Researcher & Builder · IISER Bhopal</div>
           <p class="profile-bio">
-            Undergraduate in <strong>Data Science & Engineering</strong> at the <strong>Indian Institute of Science Education and Research (IISER), Bhopal</strong>. Exploring Agentic AI, Multi-Agent Systems, LLM Reasoning & Evaluation, and Scientific Machine Learning. Building systems that can reason.
+            Undergraduate in <strong>Data Science & Engineering</strong> at the <strong>Indian Institute of Science Education and Research (IISER), Bhopal</strong>. Exploring Agentic AI, Multi-Agent Systems, LLM Reasoning & Evaluation, and Scientific Machine Learning.
+            <span class="bio-mantra">“Building systems that can reason.”</span>
           </p>
         </div>
 
@@ -74,166 +78,283 @@
       </div>
     </div>
 
-    <!-- Featured Spotlight: The Mirror -->
-    <div class="section-bar">
-      <span class="section-bar-title">Featured Spotlight</span>
-      <span class="tap-hint">Tap card to inspect</span>
+    <!-- BLOCK 2: Live Focus & Status Widget (Span 4 cols) -->
+    <div class="col-4 status-card">
+      <div>
+        <div class="status-card-header">
+          <span class="status-title">Current Trajectory</span>
+          <span class="status-badge">
+            <span class="status-pulse-dot"></span>
+            Active
+          </span>
+        </div>
+
+        <div class="status-list">
+          <div class="status-item">
+            <span class="status-item-icon">🏛️</span>
+            <div><strong>IISER Bhopal</strong><br><span style="font-size:12px; color:var(--dim);">BS-MS Data Science & Eng.</span></div>
+          </div>
+          <div class="status-item">
+            <span class="status-item-icon">🔬</span>
+            <div><strong>Primary Vector</strong><br><span style="font-size:12px; color:var(--dim);">Agentic AI & Scientific ML</span></div>
+          </div>
+          <div class="status-item">
+            <span class="status-item-icon">⚡</span>
+            <div><strong>Availability</strong><br><span style="font-size:12px; color:var(--dim);">Summer 2026 Research Labs</span></div>
+          </div>
+          <div class="status-item">
+            <span class="status-item-icon">📍</span>
+            <div><strong>Location</strong><br><span style="font-size:12px; color:var(--dim);">Bhopal / India (IST, UTC+5:30)</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="status-card-footer">
+        <span>● Open to frontier collaborations →</span>
+      </div>
     </div>
 
-    <div class="bento-card featured clickable" data-sheet="mirror">
+    <!-- METRICS ROW: 4 Punchy Metric Blocks (Span 3 cols each) -->
+    <div class="col-3 metric-card">
+      <div class="metric-val">90.5<span>%</span></div>
+      <div>
+        <div class="metric-label">Benchmark Accuracy</div>
+        <div class="metric-desc">ML4Sci Particle Collision Sparse CNN & Autoencoder pretraining</div>
+      </div>
+    </div>
+
+    <div class="col-3 metric-card">
+      <div class="metric-val">6<span>+</span></div>
+      <div>
+        <div class="metric-label">Core Systems</div>
+        <div class="metric-desc">Engineered research systems & reproducible PyTorch architectures</div>
+      </div>
+    </div>
+
+    <div class="col-3 metric-card">
+      <div class="metric-val">100<span>%</span></div>
+      <div>
+        <div class="metric-label">Open Source</div>
+        <div class="metric-desc">Public GitHub repositories with documented checkpoints & datasets</div>
+      </div>
+    </div>
+
+    <div class="col-3 metric-card">
+      <div class="metric-val">4</div>
+      <div>
+        <div class="metric-label">Active Vectors</div>
+        <div class="metric-desc">Multi-agent debate, judge eval, symbolic ODE discovery, dynamic memory</div>
+      </div>
+    </div>
+
+    <!-- FULL WIDTH FEATURED SPOTLIGHT: The Mirror (Span 12 cols) -->
+    <div class="section-bar">
+      <span class="section-bar-title">Featured Showcase</span>
+      <span class="tap-hint">Tap card to inspect deep architecture</span>
+    </div>
+
+    <div class="col-12 bento-card featured clickable" data-sheet="mirror">
       <div class="card-badge-row">
         <span class="tag accent">★ Primary Showcase</span>
         <span class="tag highlight">Interactive 2D Cosmos</span>
         <span class="tag">Claude Sonnet</span>
+        <span class="tag">Web Audio API</span>
       </div>
 
-      <h2 class="card-title">The Mirror — Living Knowledge Planetarium</h2>
-      <p class="card-desc">
-        “Your thoughts, reflected back to you.” An AI-powered interactive visualization system that transforms unstructured thoughts, notes, and journals into an evolving celestial planetarium. Features force-directed galaxy maps, photographic memory anchors, voice reflections, and temporal evolution.
-      </p>
+      <div class="featured-inner-grid">
+        <div>
+          <h2 class="card-title">The Mirror — Living Knowledge Planetarium</h2>
+          <p class="card-desc">
+            <em>“Your thoughts, reflected back to you.”</em> An AI-powered interactive visualization system that transforms unstructured thoughts, notes, and journals into an evolving celestial planetarium. Concepts exist as gravitational stars, clustering organically across semantic space.
+          </p>
+          <div class="card-tap-cta">
+            <span>Tap to open comprehensive 7-section case study (01—07)</span>
+            <span>→</span>
+          </div>
+        </div>
 
-      <div class="card-tap-cta">
-        <span>Tap to open comprehensive case study (01–07)</span>
-        <span>→</span>
+        <div class="feature-mini-pills">
+          <div class="feature-pill-box">
+            <span>🌌</span>
+            <span>60 FPS Force Graph</span>
+          </div>
+          <div class="feature-pill-box">
+            <span>🎙️</span>
+            <span>Voice Thought Memos</span>
+          </div>
+          <div class="feature-pill-box">
+            <span>📸</span>
+            <span>Visual Memory Anchors</span>
+          </div>
+          <div class="feature-pill-box">
+            <span>⏳</span>
+            <span>Temporal Evolution</span>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- Research Inquiries (Questions I'm Chasing) -->
+    <!-- SECTION: Research Inquiries (Questions I'm Chasing) -->
     <div class="section-bar">
       <span class="section-bar-title">Research Inquiries</span>
       <span class="tap-hint">Questions I'm Chasing</span>
     </div>
 
-    <div class="mini-grid">
-      <div class="mini-card" data-sheet="inquiry-agents">
-        <div>
-          <div class="mini-card-top">
-            <span class="mini-card-num">01 / AGENTS</span>
-            <span class="mini-card-arrow">↗</span>
-          </div>
-          <h4>Multi-Agent Deliberation</h4>
-          <p>How multiple agents collaborate and debate to eliminate hallucination cascades.</p>
+    <!-- Inquiry 01 (Span 6 cols) -->
+    <div class="col-6 bento-tile" data-sheet="inquiry-agents">
+      <div>
+        <div class="bento-tile-top">
+          <span class="bento-tile-num">01 / AGENTS</span>
+          <span class="bento-tile-arrow">↗</span>
         </div>
-        <div class="mini-card-tag"><span class="tag">Consensus & Debate</span></div>
+        <h3>Multi-Agent <em>Deliberation</em></h3>
+        <p>How multiple specialized agents collaborate, debate, and verify each other's intermediate outputs to eliminate single-agent hallucination cascades.</p>
       </div>
-
-      <div class="mini-card" data-sheet="inquiry-eval">
-        <div>
-          <div class="mini-card-top">
-            <span class="mini-card-num">02 / EVALUATION</span>
-            <span class="mini-card-arrow">↗</span>
-          </div>
-          <h4>Non-Gameable LLM Judges</h4>
-          <p>Overcoming verbosity and position biases through mechanism design and rubrics.</p>
-        </div>
-        <div class="mini-card-tag"><span class="tag">Judge Reliability</span></div>
-      </div>
-
-      <div class="mini-card" data-sheet="inquiry-sciml">
-        <div>
-          <div class="mini-card-top">
-            <span class="mini-card-num">03 / SCIENTIFIC ML</span>
-            <span class="mini-card-arrow">↗</span>
-          </div>
-          <h4>Symbolic ODE Discovery</h4>
-          <p>Recovering physical invariants and differential equations from noisy trajectories.</p>
-        </div>
-        <div class="mini-card-tag"><span class="tag">SINDy + Autodiff</span></div>
-      </div>
-
-      <div class="mini-card" data-sheet="inquiry-memory">
-        <div>
-          <div class="mini-card-top">
-            <span class="mini-card-num">04 / COGNITION</span>
-            <span class="mini-card-arrow">↗</span>
-          </div>
-          <h4>Dynamic Memory Graphs</h4>
-          <p>Modeling how associative personal knowledge representations decay and evolve.</p>
-        </div>
-        <div class="mini-card-tag"><span class="tag">Knowledge Graphs</span></div>
+      <div class="bento-tile-bottom">
+        <span class="tag accent">Consensus & Debate</span>
+        <span class="tap-hint">Tap to explore →</span>
       </div>
     </div>
 
-    <!-- Selected Projects Grid -->
+    <!-- Inquiry 02 (Span 6 cols) -->
+    <div class="col-6 bento-tile" data-sheet="inquiry-eval">
+      <div>
+        <div class="bento-tile-top">
+          <span class="bento-tile-num">02 / EVALUATION</span>
+          <span class="bento-tile-arrow">↗</span>
+        </div>
+        <h3>Non-Gameable <em>LLM Judges</em></h3>
+        <p>Overcoming length, position, and self-enhancement biases in automated model-based evaluation via mechanism design and multi-rubric judge ensembles.</p>
+      </div>
+      <div class="bento-tile-bottom">
+        <span class="tag accent">Judge Reliability</span>
+        <span class="tap-hint">Tap to explore →</span>
+      </div>
+    </div>
+
+    <!-- Inquiry 03 (Span 6 cols) -->
+    <div class="col-6 bento-tile" data-sheet="inquiry-sciml">
+      <div>
+        <div class="bento-tile-top">
+          <span class="bento-tile-num">03 / SCIENTIFIC ML</span>
+          <span class="bento-tile-arrow">↗</span>
+        </div>
+        <h3>Symbolic <em>ODE Discovery</em></h3>
+        <p>Recovering physical invariants and differential equations from noisy trajectories using neural autograd derivative extraction paired with LASSO sparse regression.</p>
+      </div>
+      <div class="bento-tile-bottom">
+        <span class="tag accent">SINDy + Autodiff</span>
+        <span class="tap-hint">Tap to explore →</span>
+      </div>
+    </div>
+
+    <!-- Inquiry 04 (Span 6 cols) -->
+    <div class="col-6 bento-tile" data-sheet="inquiry-memory">
+      <div>
+        <div class="bento-tile-top">
+          <span class="bento-tile-num">04 / COGNITION</span>
+          <span class="bento-tile-arrow">↗</span>
+        </div>
+        <h3>Dynamic <em>Memory Graphs</em></h3>
+        <p>Modeling how associative personal knowledge representations consolidate, decay, and reactivate across temporal scales in persistent agent memories.</p>
+      </div>
+      <div class="bento-tile-bottom">
+        <span class="tag accent">Knowledge Graphs</span>
+        <span class="tap-hint">Tap to explore →</span>
+      </div>
+    </div>
+
+    <!-- SECTION: Selected Projects (Bento Matrix) -->
     <div class="section-bar">
       <span class="section-bar-title">Selected Projects</span>
       <span class="tap-hint">Tap card for deep dive</span>
     </div>
 
-    <div class="mini-grid">
-      <!-- ML4Sci Sparse DL -->
-      <div class="mini-card" data-sheet="ml4sci">
-        <div>
-          <div class="mini-card-top">
-            <span class="mini-card-num">02 / RESEARCH</span>
-            <span class="tag accent" style="padding:2px 7px; font-size:11px;">90.5% Acc</span>
-          </div>
-          <h4>ML4Sci — Sparse Deep Learning</h4>
-          <p>Subatomic particle collision classification via sparse CNNs, autoencoder pretraining & pruning.</p>
+    <!-- Project 1: ML4Sci (Span 7 cols) -->
+    <div class="col-7 bento-tile" data-sheet="ml4sci">
+      <div>
+        <div class="bento-tile-top">
+          <span class="bento-tile-num">02 / RESEARCH</span>
+          <span class="tag accent" style="padding:2px 8px; font-size:11px;">90.5% Accuracy</span>
         </div>
-        <div class="mini-card-tag"><span class="tag">PyTorch · GSoC 2026</span></div>
+        <h3>ML4Sci — <em>Sparse Deep Learning</em></h3>
+        <p>Subatomic particle collision classification via sparse convolutional networks, autoencoder pretraining, transfer learning, and model pruning. GSoC 2026 test task evaluation benchmark.</p>
       </div>
-
-      <!-- SIR Model Discovery -->
-      <div class="mini-card" data-sheet="sir">
-        <div>
-          <div class="mini-card-top">
-            <span class="mini-card-num">03 / SCIENTIFIC ML</span>
-            <span class="mini-card-arrow">↗</span>
-          </div>
-          <h4>SIR Model ODE Discovery</h4>
-          <p>Neural autograd derivative extraction and LASSO regression discovering epidemic dynamics.</p>
-        </div>
-        <div class="mini-card-tag"><span class="tag">SINDy · PyTorch</span></div>
-      </div>
-
-      <!-- Groundwater Prediction -->
-      <div class="mini-card" data-sheet="groundwater">
-        <div>
-          <div class="mini-card-top">
-            <span class="mini-card-num">04 / APPLIED ML</span>
-            <span class="mini-card-arrow">↗</span>
-          </div>
-          <h4>Groundwater Prediction</h4>
-          <p>Spatiotemporal hydrological forecasting pipeline comparing XGBoost, CatBoost and LSTM.</p>
-        </div>
-        <div class="mini-card-tag"><span class="tag">IIT Patna Internship</span></div>
-      </div>
-
-      <!-- Transformer From Scratch -->
-      <div class="mini-card" data-sheet="transformer">
-        <div>
-          <div class="mini-card-top">
-            <span class="mini-card-num">05 / FOUNDATIONS</span>
-            <span class="mini-card-arrow">↗</span>
-          </div>
-          <h4>Transformer From Scratch</h4>
-          <p>Pure PyTorch sequence-to-sequence implementation: multi-head attention, positional encoding.</p>
-        </div>
-        <div class="mini-card-tag"><span class="tag">PyTorch · NLP</span></div>
-      </div>
-
-      <!-- Instagram Focus (Full width in mini-grid) -->
-      <div class="mini-card" data-sheet="instagram" style="grid-column: span 2;">
-        <div>
-          <div class="mini-card-top">
-            <span class="mini-card-num">06 / PRODUCT ETHICS</span>
-            <span class="mini-card-arrow">↗</span>
-          </div>
-          <h4>Instagram Focus</h4>
-          <p>Cognitive focus concept isolating high-utility communication surfaces while filtering addictive recommendation feeds.</p>
-        </div>
-        <div class="mini-card-tag"><span class="tag">Interface Design · Product</span></div>
+      <div class="bento-tile-bottom">
+        <span class="tag">PyTorch · Sparse CNNs · Autoencoders</span>
+        <span class="bento-tile-arrow">↗</span>
       </div>
     </div>
 
-    <!-- Experience Timeline -->
+    <!-- Project 2: SIR Model (Span 5 cols) -->
+    <div class="col-5 bento-tile" data-sheet="sir">
+      <div>
+        <div class="bento-tile-top">
+          <span class="bento-tile-num">03 / SCIENTIFIC ML</span>
+          <span class="bento-tile-arrow">↗</span>
+        </div>
+        <h3>SIR Model <em>ODE Discovery</em></h3>
+        <p>Neural autograd derivative extraction and LASSO regression discovering epidemic dynamics from stochastic time series data.</p>
+      </div>
+      <div class="bento-tile-bottom">
+        <span class="tag">PyTorch · SINDy · SciML</span>
+      </div>
+    </div>
+
+    <!-- Project 3: Groundwater (Span 5 cols) -->
+    <div class="col-5 bento-tile" data-sheet="groundwater">
+      <div>
+        <div class="bento-tile-top">
+          <span class="bento-tile-num">04 / APPLIED ML</span>
+          <span class="bento-tile-arrow">↗</span>
+        </div>
+        <h3>Groundwater <em>Prediction</em></h3>
+        <p>Spatiotemporal hydrological forecasting pipeline comparing XGBoost, CatBoost, and LSTM on heterogeneous geological sensor series.</p>
+      </div>
+      <div class="bento-tile-bottom">
+        <span class="tag">IIT Patna · Hydrology</span>
+      </div>
+    </div>
+
+    <!-- Project 4: Transformer From Scratch (Span 7 cols) -->
+    <div class="col-7 bento-tile" data-sheet="transformer">
+      <div>
+        <div class="bento-tile-top">
+          <span class="bento-tile-num">05 / FOUNDATIONS</span>
+          <span class="bento-tile-arrow">↗</span>
+        </div>
+        <h3>Transformer <em>From Scratch</em></h3>
+        <p>Pure PyTorch sequence-to-sequence implementation: scaled dot-product multi-head attention, sinusoidal positional encoding, feedforward sublayers, and causal mask matrices.</p>
+      </div>
+      <div class="bento-tile-bottom">
+        <span class="tag">PyTorch · NLP · Attention</span>
+      </div>
+    </div>
+
+    <!-- Project 5: Instagram Focus (Span 12 cols) -->
+    <div class="col-12 bento-tile" data-sheet="instagram">
+      <div>
+        <div class="bento-tile-top">
+          <span class="bento-tile-num">06 / PRODUCT ETHICS</span>
+          <span class="bento-tile-arrow">↗</span>
+        </div>
+        <h3>Instagram <em>Focus</em> — Mindful Interface Architecture</h3>
+        <p>A cognitive focus-oriented architecture that keeps high-utility communication surfaces (DMs, notifications, profiles, follow requests) completely frictionless while masking algorithmic recommendation hooks (Reels, Explore, infinite discovery feeds).</p>
+      </div>
+      <div class="bento-tile-bottom">
+        <span class="tag highlight">Digital Wellbeing · System Architecture</span>
+        <span class="tap-hint">Tap for concept breakdown →</span>
+      </div>
+    </div>
+
+    <!-- SECTION: Experience & Academic Foundation -->
     <div class="section-bar">
-      <span class="section-bar-title">Experience & Trajectory</span>
-      <span class="tap-hint">Tap role for details</span>
+      <span class="section-bar-title">Trajectory & Education</span>
+      <span class="tap-hint">Experience & Coursework</span>
     </div>
 
-    <div class="list-card-group">
+    <!-- Experience List Block (Span 7 cols) -->
+    <div class="col-7 list-card-group">
       <div class="list-item-card" data-sheet="exp-agentic">
         <div class="list-item-left">
           <div class="list-item-date">2026 · CURRENT FOCUS</div>
@@ -271,34 +392,54 @@
       </div>
     </div>
 
-    <!-- Academic Background Card -->
-    <div class="section-bar">
-      <span class="section-bar-title">Education</span>
-      <span class="tap-hint">Tap for coursework</span>
-    </div>
-
-    <div class="bento-card clickable" data-sheet="education">
+    <!-- Education Block (Span 5 cols) -->
+    <div class="col-5 bento-card clickable" data-sheet="education">
       <div class="card-badge-row">
         <span class="tag accent">Institute of National Importance</span>
         <span class="tag">Undergraduate</span>
       </div>
-      <h3 style="font-size:22px; color:var(--text); margin-bottom:6px;">Indian Institute of Science Education and Research (IISER) Bhopal</h3>
-      <p style="color:var(--muted); font-size:14px; margin-bottom:12px;">
-        BS-MS in Data Science & Engineering. Rigorous mathematical foundations synthesized with computational systems and machine learning.
+      <h3 style="font-size:20px; color:var(--text); margin-bottom:8px;">IISER Bhopal</h3>
+      <p style="color:var(--muted); font-size:13.5px; margin-bottom:14px; line-height:1.55;">
+        BS-MS in <strong>Data Science & Engineering</strong>. Rigorous mathematical foundations synthesized with computational systems and machine learning.
       </p>
+      <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px;">
+        <span class="tag">Machine Learning</span>
+        <span class="tag">Deep Learning</span>
+        <span class="tag">Linear Algebra</span>
+        <span class="tag">Probability</span>
+      </div>
       <div class="card-tap-cta">
-        <span>Tap to inspect core mathematical & computing coursework</span>
+        <span>Tap to inspect core coursework</span>
         <span>→</span>
       </div>
     </div>
 
-    <!-- Publications & Working Notes -->
-    <div class="section-bar">
-      <span class="section-bar-title">Publications & Reports</span>
-      <span class="tap-hint">Tap for BibTeX citation</span>
+    <!-- Achievements Full Width Bento Card (Span 12 cols) -->
+    <div class="col-12 bento-card clickable" data-sheet="achievements">
+      <div class="card-badge-row">
+        <span class="tag accent">GSoC Tasks</span>
+        <span class="tag highlight">IIT Patna Selection</span>
+        <span class="tag">Visdom Lab</span>
+        <span class="tag">IISER Bhopal Entrance</span>
+      </div>
+      <h3 style="font-size:20px; color:var(--text); margin-bottom:6px;">Verified Milestones & Selections</h3>
+      <p style="color:var(--muted); font-size:13.5px; margin-bottom:12px;">
+        Competitive admissions to Institute of National Importance, open-source scientific deep learning task qualifications, research laboratory appointments, and student leadership.
+      </p>
+      <div class="card-tap-cta">
+        <span>Tap to view full milestone record</span>
+        <span>→</span>
+      </div>
     </div>
 
-    <div class="list-card-group">
+    <!-- SECTION: Publications & Contact -->
+    <div class="section-bar">
+      <span class="section-bar-title">Publications & Connect</span>
+      <span class="tap-hint">BibTeX & Direct Reach</span>
+    </div>
+
+    <!-- Publications Block (Span 6 cols) -->
+    <div class="col-6 list-card-group">
       <div class="list-item-card" data-sheet="pub-sparse">
         <div class="list-item-left">
           <div class="list-item-date">TECHNICAL REPORT · 2026</div>
@@ -318,56 +459,29 @@
       </div>
     </div>
 
-    <!-- Achievements & Recognition Card -->
-    <div class="section-bar">
-      <span class="section-bar-title">Achievements</span>
-      <span class="tap-hint">Tap for verified milestones</span>
-    </div>
-
-    <div class="bento-card clickable" data-sheet="achievements">
-      <div class="card-badge-row">
-        <span class="tag accent">GSoC Tasks</span>
-        <span class="tag highlight">IIT Patna Selection</span>
-        <span class="tag">Visdom Lab</span>
-      </div>
-      <h3 style="font-size:20px; color:var(--text); margin-bottom:6px;">Verified Milestones & Selections</h3>
-      <p style="color:var(--muted); font-size:13.5px; margin-bottom:12px;">
-        Competitive admissions, open-source scientific deep learning task qualifications, research appointments, and leadership.
-      </p>
-      <div class="card-tap-cta">
-        <span>Tap to view full milestone record</span>
-        <span>→</span>
-      </div>
-    </div>
-
-    <!-- Direct Reach / Quick Message Card -->
-    <div class="section-bar">
-      <span class="section-bar-title">Connect & Inquiries</span>
-      <span class="tap-hint">Collaborate</span>
-    </div>
-
-    <div class="bento-card" style="cursor:default;">
-      <h3 style="font-size:22px; color:var(--text); margin-bottom:8px;">Let's Build Something Ambitious</h3>
-      <p style="color:var(--muted); font-size:14px; margin-bottom:20px;">
+    <!-- Connect & Inquiries Card (Span 6 cols) -->
+    <div class="col-6 bento-card" style="cursor:default;">
+      <h3 style="font-size:20px; color:var(--text); margin-bottom:6px;">Let's Build Something Ambitious</h3>
+      <p style="color:var(--muted); font-size:13.5px; margin-bottom:14px;">
         Open to research collaborations, Summer 2026 internships, and deep discussions on agentic architectures.
       </p>
 
       <form onsubmit="handleMailCompose(event)">
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:10px;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:8px;">
           <input id="v2SenderName" type="text" placeholder="Your Name" required
-                 style="background:var(--bg-subtle); border:1px solid var(--line); border-radius:var(--radius-sm); padding:10px 12px; color:var(--text); font-size:13.5px; outline:none;">
+                 style="background:var(--bg-subtle); border:1px solid var(--line); border-radius:var(--radius-sm); padding:9px 12px; color:var(--text); font-size:13px; outline:none;">
           <input id="v2SenderSub" type="text" placeholder="Subject" required
-                 style="background:var(--bg-subtle); border:1px solid var(--line); border-radius:var(--radius-sm); padding:10px 12px; color:var(--text); font-size:13.5px; outline:none;">
+                 style="background:var(--bg-subtle); border:1px solid var(--line); border-radius:var(--radius-sm); padding:9px 12px; color:var(--text); font-size:13px; outline:none;">
         </div>
         <textarea id="v2SenderMsg" placeholder="Hi Sawan, I'd like to connect regarding..." required
-                  style="width:100%; background:var(--bg-subtle); border:1px solid var(--line); border-radius:var(--radius-sm); padding:10px 12px; color:var(--text); font-size:13.5px; min-height:85px; outline:none; margin-bottom:12px; resize:vertical;"></textarea>
+                  style="width:100%; background:var(--bg-subtle); border:1px solid var(--line); border-radius:var(--radius-sm); padding:9px 12px; color:var(--text); font-size:13px; min-height:75px; outline:none; margin-bottom:10px; resize:vertical;"></textarea>
         <button type="submit" class="social-pill primary" style="width:100%; justify-content:center; cursor:pointer;">
           Compose Direct Email ↗
         </button>
       </form>
     </div>
 
-    <!-- Footer -->
+    <!-- FOOTER (Span 12 cols) -->
     <div class="bento-footer">
       <p>© 2026 Sawan Ade · IISER Bhopal · Built for GitHub Pages</p>
       <p style="margin-top:6px;">
@@ -399,6 +513,9 @@
   <!-- TOAST NOTIFICATION -->
   <div id="toastMsg" class="toast-msg"></div>
 
+  <!-- 3D Particle Waves Canvas Engine -->
+  <script src="particle-waves.js"></script>
+  <!-- Application & Detail Sheets Logic -->
   <script src="app.js"></script>
 </body>
 </html>

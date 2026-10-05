@@ -1,10 +1,11 @@
 /* ==========================================================================
-   SAWAN ADE — PORTFOLIO V2 (BENTO / SINGLE-SHEET LINK3 STYLE)
-   LIGHT MODE + DRIBBLE MESH & ARCHITECTURAL GRID BACKGROUND
+   SAWAN ADE — PORTFOLIO V2 (MODERN BENTO GRID)
+   3D PARTICLE WAVES ON WHITE BACKGROUND + INSTRUMENT SERIF TYPOGRAPHY
    ========================================================================== */
 
 :root {
-  --bg: #f8fafc;
+  --bg: #ffffff;
+  --bg-subtle: #f8fafc;
   --bg-sheet: #ffffff;
   --card: #ffffff;
   --card-hover: #ffffff;
@@ -16,6 +17,7 @@
   --text: #0f172a;
   --muted: #475569;
   --dim: #64748b;
+  --text-secondary: #334155;
   
   --accent: #4d7c0f;
   --accent-light: #65a30d;
@@ -24,11 +26,11 @@
   --accent-subtle: #f7fee7;
   --accent-glow: rgba(101, 163, 13, 0.2);
   
-  --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
-  --sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
 
-  --radius-xl: 26px;
+  --radius-xl: 24px;
   --radius-lg: 20px;
   --radius-md: 14px;
   --radius-sm: 8px;
@@ -62,7 +64,7 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: var(--bg);
+  background-color: #ffffff;
   color: var(--text);
   font-family: var(--sans);
   font-size: 16px;
@@ -71,23 +73,24 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Dribbble Mesh Gradient + Architectural Dot Grid Background */
+/* Clean White Background with 3D Particle Waves Canvas */
 body {
   min-height: 100vh;
-  background-color: #f8fafc;
-  background-image: 
-    radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.045) 1.2px, transparent 1.2px),
-    radial-gradient(circle at 10% 8%, rgba(217, 249, 157, 0.5) 0%, transparent 45%),
-    radial-gradient(circle at 90% 12%, rgba(186, 230, 253, 0.45) 0%, transparent 45%),
-    radial-gradient(circle at 95% 65%, rgba(254, 240, 138, 0.35) 0%, transparent 45%),
-    radial-gradient(circle at 12% 80%, rgba(233, 213, 255, 0.38) 0%, transparent 45%),
-    radial-gradient(circle at 65% 95%, rgba(217, 249, 157, 0.4) 0%, transparent 45%);
-  background-size: 24px 24px, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
-  background-attachment: fixed;
+  background-color: #ffffff;
   color: var(--text);
   overflow-x: hidden;
   padding: 24px 16px 80px;
   position: relative;
+}
+
+.particle-waves-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
 }
 
 a {
@@ -103,230 +106,36 @@ button {
   cursor: pointer;
 }
 
-/* Central Container (Link3 "One Sheet" Column) */
+/* ==========================================================================
+   BENTO CONTAINER & GRID OF BLOCKS
+   ========================================================================== */
 .bento-container {
-  max-width: 720px;
+  max-width: 1040px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
   gap: 16px;
 }
 
-/* ==========================================================================
-   PROFILE HEADER CARD (LINK3 STYLE)
-   ========================================================================== */
-.profile-card {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.9);
-}
-
-.profile-banner {
-  height: 140px;
-  background: linear-gradient(135deg, rgba(217, 249, 157, 0.7) 0%, rgba(186, 230, 253, 0.6) 50%, rgba(254, 240, 138, 0.6) 100%);
-  position: relative;
-  overflow: hidden;
-  border-bottom: 1px solid var(--line);
-}
-
-.banner-canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.75;
-  pointer-events: none;
-}
-
-.profile-body {
-  padding: 0 28px 28px;
-  position: relative;
-}
-
-.avatar-wrapper {
-  margin-top: -46px;
-  margin-bottom: 16px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-}
-
-.avatar {
-  width: 86px;
-  height: 86px;
-  border-radius: 50%;
-  background: #ffffff;
-  border: 3.5px solid #ffffff;
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.avatar-symbol {
-  font-size: 30px;
-  color: #0f172a;
-  font-family: var(--serif);
-  font-weight: 600;
-}
-
-.status-indicator {
-  position: absolute;
-  bottom: 4px;
-  right: 4px;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--accent-light);
-  border: 2.5px solid #ffffff;
-  box-shadow: 0 0 10px rgba(101, 163, 13, 0.5);
-}
-
-.badge-version {
-  font-size: 11.5px;
-  font-family: var(--mono);
-  padding: 5px 12px;
-  border-radius: var(--radius-full);
-  background: #ecfccb;
-  border: 1px solid rgba(101, 163, 13, 0.35);
-  color: #365314;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: 600;
-}
-
-.profile-info h1 {
-  font-family: var(--serif);
-  font-size: 34px;
-  font-weight: 400;
-  line-height: 1.1;
-  color: #0f172a;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 4px;
-}
-
-.verified-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: var(--accent-light);
-  color: #ffffff;
-  font-size: 11px;
-  font-weight: 800;
-}
-
-.profile-headline {
-  font-size: 14.5px;
-  color: var(--accent);
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-
-.profile-bio {
-  color: #334155;
-  font-size: 14.5px;
-  line-height: 1.6;
-  margin-bottom: 22px;
-}
-
-/* Social Icon Pills (Link3 Style) */
-.social-pills-row {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.social-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 15px;
-  border-radius: var(--radius-full);
-  background: #ffffff;
-  border: 1px solid rgba(15, 23, 42, 0.12);
-  font-size: 13px;
-  color: #0f172a;
-  font-weight: 500;
-  transition: all var(--transition-fast);
-  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
-}
-
-.social-pill:hover {
-  background: #f1f5f9;
-  border-color: rgba(15, 23, 42, 0.25);
-  transform: translateY(-2px);
-  color: #0f172a;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
-}
-
-.social-pill.primary {
-  background: #0f172a;
-  border-color: #0f172a;
-  color: #ffffff;
-  font-weight: 600;
-}
-
-.social-pill.primary:hover {
-  background: #1e293b;
-  border-color: #1e293b;
-  color: #ffffff;
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.2);
-}
-
-/* ==========================================================================
-   BENTO BLOCKS & INTERACTIVE CARDS
-   ========================================================================== */
-.bento-card {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  padding: 24px;
-  transition: transform var(--transition-smooth), border-color var(--transition-smooth), background var(--transition-smooth), box-shadow var(--transition-smooth);
-  position: relative;
-  cursor: pointer;
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.9);
-}
-
-.bento-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(15, 23, 42, 0.18);
-  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
-}
-
-.bento-card.clickable::after {
-  content: "↗";
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  color: var(--accent);
-  font-size: 17px;
-  transition: transform var(--transition-fast);
-}
-
-.bento-card.clickable:hover::after {
-  transform: translate(3px, -3px);
-}
+/* Column Span Utilities */
+.col-12 { grid-column: span 12; }
+.col-8  { grid-column: span 8; }
+.col-7  { grid-column: span 7; }
+.col-6  { grid-column: span 6; }
+.col-5  { grid-column: span 5; }
+.col-4  { grid-column: span 4; }
+.col-3  { grid-column: span 3; }
 
 /* Section Header Bar */
 .section-bar {
+  grid-column: span 12;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 12px 0 4px;
-  padding: 0 6px;
+  margin: 14px 0 2px;
+  padding: 0 4px;
 }
 
 .section-bar-title {
@@ -355,11 +164,384 @@ button {
   font-family: var(--mono);
 }
 
-/* Featured Card (The Mirror) */
+/* ==========================================================================
+   BLOCK 1: PROFILE HEADER BLOCK
+   ========================================================================== */
+.profile-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-banner {
+  height: 125px;
+  background: linear-gradient(135deg, rgba(217, 249, 157, 0.7) 0%, rgba(186, 230, 253, 0.6) 50%, rgba(254, 240, 138, 0.6) 100%);
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+.banner-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+.profile-body {
+  padding: 0 26px 24px;
+  position: relative;
+}
+
+.avatar-wrapper {
+  margin-top: -42px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.avatar {
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3.5px solid #ffffff;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.avatar-symbol {
+  font-size: 28px;
+  color: #0f172a;
+  font-family: var(--serif);
+  font-weight: 600;
+}
+
+.status-indicator {
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent-light);
+  border: 2.5px solid #ffffff;
+  box-shadow: 0 0 10px rgba(101, 163, 13, 0.6);
+  animation: pulseStatus 2.2s infinite ease-in-out;
+}
+
+@keyframes pulseStatus {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.15); opacity: 0.85; }
+}
+
+.badge-version {
+  font-size: 11.5px;
+  font-family: var(--mono);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  background: #ecfccb;
+  border: 1px solid rgba(101, 163, 13, 0.35);
+  color: #365314;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.profile-info h1 {
+  font-family: var(--serif);
+  font-size: clamp(32px, 3.8vw, 42px);
+  font-weight: 400;
+  line-height: 1.1;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+  letter-spacing: -0.02em;
+}
+
+.profile-info h1 em {
+  font-style: italic;
+  font-family: var(--serif);
+  color: #0f172a;
+}
+
+.verified-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: var(--accent-light);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.profile-headline {
+  font-size: 14px;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+
+.profile-bio {
+  color: #334155;
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.profile-bio strong {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.profile-bio .bio-mantra {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--serif);
+  font-size: 18px;
+  font-style: italic;
+  color: #0f172a;
+}
+
+/* Social Icon Pills */
+.social-pills-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.social-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  font-size: 12.5px;
+  color: #0f172a;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+.social-pill:hover {
+  background: #f8fafc;
+  border-color: rgba(15, 23, 42, 0.25);
+  transform: translateY(-2px);
+  color: #0f172a;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+.social-pill.primary {
+  background: #0f172a;
+  border-color: #0f172a;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.social-pill.primary:hover {
+  background: #1e293b;
+  border-color: #1e293b;
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.2);
+}
+
+/* ==========================================================================
+   BLOCK 2: LIVE STATUS & FOCUS WIDGET BLOCK
+   ========================================================================== */
+.status-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.status-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.status-badge {
+  font-size: 11px;
+  font-family: var(--mono);
+  background: #ecfccb;
+  color: #365314;
+  border: 1px solid rgba(101, 163, 13, 0.3);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.status-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #65a30d;
+}
+
+.status-title {
+  font-size: 11.5px;
+  font-family: var(--mono);
+  text-transform: uppercase;
+  color: var(--dim);
+  letter-spacing: 0.12em;
+}
+
+.status-list {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.status-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  color: #334155;
+  line-height: 1.45;
+}
+
+.status-item-icon {
+  font-size: 15px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.status-item strong {
+  color: #0f172a;
+}
+
+.status-card-footer {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  font-size: 11.5px;
+  font-family: var(--mono);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   BLOCKS 3-6: METRIC BLOCKS MATRIX
+   ========================================================================== */
+.metric-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all var(--transition-smooth);
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.metric-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(101, 163, 13, 0.4);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.metric-val {
+  font-family: var(--serif);
+  font-size: 38px;
+  line-height: 1;
+  font-weight: 400;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.metric-val span {
+  font-family: var(--mono);
+  font-size: 26px;
+  color: var(--accent);
+}
+
+.metric-label {
+  font-size: 11.5px;
+  font-family: var(--mono);
+  color: var(--dim);
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.metric-desc {
+  font-size: 12.5px;
+  color: #334155;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   FEATURED SPOTLIGHT: THE MIRROR (FULL WIDTH 12 COLS)
+   ========================================================================== */
+.bento-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.bento-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(15, 23, 42, 0.18);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+}
+
+.bento-card.clickable::after {
+  content: "↗";
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  color: var(--accent);
+  font-size: 17px;
+  transition: transform var(--transition-fast);
+}
+
+.bento-card.clickable:hover::after {
+  transform: translate(3px, -3px);
+}
+
 .bento-card.featured {
-  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 40%, #f7fee7 100%);
+  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 45%, #f7fee7 100%);
   border-color: rgba(101, 163, 13, 0.3);
-  padding: 30px;
+  padding: 28px;
   box-shadow: 0 10px 30px rgba(101, 163, 13, 0.08);
 }
 
@@ -368,16 +550,23 @@ button {
   box-shadow: 0 18px 45px rgba(101, 163, 13, 0.14);
 }
 
+.featured-inner-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
 .card-badge-row {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   flex-wrap: wrap;
 }
 
 .tag {
-  font-size: 11.5px;
+  font-size: 11px;
   font-family: var(--mono);
   color: #475569;
   border: 1px solid rgba(15, 23, 42, 0.1);
@@ -403,18 +592,50 @@ button {
 
 .card-title {
   font-family: var(--serif);
-  font-size: 26px;
+  font-size: clamp(24px, 2.5vw, 30px);
   font-weight: 400;
   color: #0f172a;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   letter-spacing: -0.02em;
+}
+
+.card-title em {
+  font-style: italic;
+  font-family: var(--serif);
 }
 
 .card-desc {
   color: #334155;
   font-size: 14px;
   line-height: 1.6;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
+}
+
+.card-desc em {
+  font-style: italic;
+  font-family: var(--serif);
+  color: #0f172a;
+  font-size: 15px;
+}
+
+.feature-mini-pills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.feature-pill-box {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #0f172a;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03);
 }
 
 .card-tap-cta {
@@ -427,71 +648,85 @@ button {
   gap: 6px;
 }
 
-/* Mini Grid (Inquiries & Projects) */
-.mini-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-}
-
-.mini-card {
+/* ==========================================================================
+   RESEARCH INQUIRIES & PROJECT BENTO BLOCKS
+   ========================================================================== */
+.bento-tile {
   background: var(--card);
   border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  padding: 18px;
+  border-radius: var(--radius-lg);
+  padding: 22px;
   cursor: pointer;
   transition: all var(--transition-smooth);
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03);
+  box-shadow: 0 3px 14px rgba(15, 23, 42, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
-.mini-card:hover {
-  transform: translateY(-2.5px);
-  border-color: rgba(15, 23, 42, 0.18);
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+.bento-tile:hover {
+  transform: translateY(-3px);
+  border-color: rgba(15, 23, 42, 0.2);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
 }
 
-.mini-card-top {
+.bento-tile-top {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
-.mini-card-num {
+.bento-tile-num {
   font-size: 11px;
   font-family: var(--mono);
   color: var(--dim);
 }
 
-.mini-card-arrow {
+.bento-tile-arrow {
   color: var(--accent);
-  font-size: 14px;
+  font-size: 15px;
+  transition: transform var(--transition-fast);
 }
 
-.mini-card h4 {
-  font-size: 16px;
+.bento-tile:hover .bento-tile-arrow {
+  transform: translate(2px, -2px);
+}
+
+.bento-tile h3, .bento-tile h4 {
+  font-size: 18px;
   font-weight: 600;
   color: #0f172a;
   margin-bottom: 6px;
   line-height: 1.3;
 }
 
-.mini-card p {
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.5;
-  margin-bottom: 12px;
+.bento-tile h3 em, .bento-tile h4 em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 20px;
 }
 
-.mini-card-tag {
+.bento-tile p {
+  font-size: 13.5px;
+  color: #334155;
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+
+.bento-tile-bottom {
   margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
 }
 
-/* Stacked List Items (Experience & Publications) */
+/* ==========================================================================
+   EXPERIENCE & PUBLICATIONS LIST CARDS
+   ========================================================================== */
 .list-card-group {
   display: flex;
   flex-direction: column;
@@ -502,14 +737,14 @@ button {
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  padding: 18px 20px;
+  padding: 16px 18px;
   cursor: pointer;
   transition: all var(--transition-fast);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03);
+  gap: 14px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .list-item-card:hover {
@@ -523,17 +758,17 @@ button {
 }
 
 .list-item-date {
-  font-size: 12px;
+  font-size: 11.5px;
   font-family: var(--mono);
   color: var(--dim);
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
 .list-item-title {
-  font-size: 16px;
+  font-size: 15.5px;
   font-weight: 600;
   color: #0f172a;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
 .list-item-sub {
@@ -544,12 +779,12 @@ button {
 
 .list-item-arrow {
   color: var(--accent);
-  font-size: 18px;
+  font-size: 17px;
   flex-shrink: 0;
 }
 
 /* ==========================================================================
-   SLIDE-UP DETAIL SHEET MODAL (THE CORE V2 INTERACTION)
+   SLIDE-UP DETAIL SHEET MODAL
    ========================================================================== */
 .sheet-backdrop {
   position: fixed;
@@ -573,7 +808,7 @@ button {
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 100%);
-  width: min(760px, 100%);
+  width: min(820px, 100%);
   max-height: 88vh;
   background: var(--bg-sheet);
   border: 1px solid rgba(15, 23, 42, 0.12);
@@ -698,7 +933,6 @@ button {
   overflow-x: auto;
 }
 
-/* BibTeX Box inside sheet */
 .sheet-bibtex {
   background: #f8fafc;
   border: 1px solid var(--line);
@@ -713,7 +947,7 @@ button {
 }
 
 /* ==========================================================================
-   TOAST NOTIFICATION
+   TOAST NOTIFICATION & FOOTER
    ========================================================================== */
 .toast-msg {
   position: fixed;
@@ -742,10 +976,8 @@ button {
   opacity: 1;
 }
 
-/* ==========================================================================
-   FOOTER
-   ========================================================================== */
 .bento-footer {
+  grid-column: span 12;
   text-align: center;
   padding: 30px 10px 10px;
   font-size: 13px;
@@ -756,19 +988,44 @@ button {
   color: var(--accent);
 }
 
-/* Responsive adjustments */
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS FOR BENTO GRID
+   ========================================================================== */
+@media (max-width: 960px) {
+  .col-8, .col-7, .col-5, .col-4 {
+    grid-column: span 12;
+  }
+  .col-3 {
+    grid-column: span 6;
+  }
+  .col-6 {
+    grid-column: span 12;
+  }
+  .featured-inner-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
 @media (max-width: 600px) {
   body {
     padding: 12px 10px 60px;
   }
-  .mini-grid {
+  .bento-container {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .col-12, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3 {
+    grid-column: span 1;
   }
   .profile-body {
     padding: 0 18px 22px;
   }
-  .bento-card {
-    padding: 20px;
+  .bento-card, .status-card, .bento-tile {
+    padding: 18px;
+  }
+  .feature-mini-pills {
+    grid-template-columns: 1fr;
   }
   .sheet-modal {
     max-height: 94vh;
