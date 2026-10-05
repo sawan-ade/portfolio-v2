@@ -36,8 +36,8 @@ function initBannerCanvas() {
     particles.push({
       x: Math.random() * width,
       y: Math.random() * height,
-      vx: (Math.random() - 0.5) * 0.4,
-      vy: (Math.random() - 0.5) * 0.4,
+      vx: (Math.random() - 0.5) * 0.14,
+      vy: (Math.random() - 0.5) * 0.14,
       radius: Math.random() * 1.5 + 1,
       isAccent: Math.random() < 0.25
     });
