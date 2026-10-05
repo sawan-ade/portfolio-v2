@@ -56,7 +56,7 @@ function initBannerCanvas() {
 
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-      ctx.fillStyle = p.isAccent ? '#c7ff4a' : 'rgba(255, 255, 255, 0.45)';
+      ctx.fillStyle = p.isAccent ? '#65a30d' : 'rgba(15, 23, 42, 0.35)';
       ctx.fill();
 
       for (let j = i + 1; j < count; j++) {
@@ -69,7 +69,7 @@ function initBannerCanvas() {
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(p2.x, p2.y);
-          ctx.strokeStyle = p.isAccent || p2.isAccent ? 'rgba(199, 255, 74, 0.2)' : 'rgba(255, 255, 255, 0.08)';
+          ctx.strokeStyle = p.isAccent || p2.isAccent ? 'rgba(101, 163, 13, 0.25)' : 'rgba(15, 23, 42, 0.1)';
           ctx.lineWidth = 0.8;
           ctx.stroke();
         }
@@ -115,7 +115,7 @@ const SHEET_DATA = {
       <div class="sheet-section">
         <div class="sheet-section-num">04 — CORE CAPABILITIES</div>
         <h3>Key Subsystems</h3>
-        <ul style="padding-left:20px; line-height:1.7; color:#a4a4b0;">
+        <ul style="padding-left:20px; line-height:1.7; color:var(--text-secondary);">
           <li><strong>Galaxy Thought Map:</strong> High-performance Canvas 2D engine with 60 FPS force layout.</li>
           <li><strong>Visual Memory Anchors:</strong> Photographic gallery attached directly to node coordinates.</li>
           <li><strong>Voice Thoughts:</strong> In-browser voice memos recorded via Web Audio API.</li>
@@ -409,7 +409,7 @@ const SHEET_DATA = {
     lead: 'Academic selections, GSoC test milestones, and institutional appointments.',
     body: `
       <div class="sheet-section">
-        <ul style="padding-left:20px; line-height:1.7; color:#a4a4b0;">
+        <ul style="padding-left:20px; line-height:1.7; color:var(--text-secondary);">
           <li><strong>ML4Sci GSoC 2026 Test Tasks:</strong> Engineered solutions for Sparse Deep Learning (90.5% accuracy) and SIR Symbolic ODE Discovery.</li>
           <li><strong>IIT Patna Research Internship:</strong> Competitively selected for hydrological ML modeling summer internship.</li>
           <li><strong>Visdom Lab Research Internship:</strong> Selected for deep learning and computer vision research internship.</li>
